@@ -7,7 +7,7 @@ source <(curl -fsSL https://raw.githubusercontent.com/tom-pryor/ProxmoxVE/refs/h
 
 # App Default Values
 APP="python-matter-server"
-var_tags="${var_tags:-[category]}"
+var_tags="${var_tags:-iot;home-automation}"
 var_cpu="${var_cpu:-2}"
 var_ram="${var_ram:-1024}"
 var_disk="${var_disk:-4}"
