@@ -160,7 +160,8 @@ fetch_and_deploy_gh_release "python-matter-server" "matter-js/python-matter-serv
 
 msg_info "Setting up python-matter-server"
 cd /opt/python-matter-server
-$STD uv pip install --system -e ".[server]"
+$STD uv venv --python python3.13
+$STD uv pip install -e ".[server]"
 msg_ok "Setup python-matter-server"
 
 # =============================================================================
@@ -185,7 +186,7 @@ After=network.target
 Type=simple
 User=root
 WorkingDirectory=/opt/python-matter-server
-ExecStart=python -m matter_server.server --storage-path /data --paa-root-cert-dir /data/credentials
+ExecStart=/opt/python-matter-server/.venv/bin/python3 -m matter_server.server --storage-path /data --paa-root-cert-dir /data/credentials
 Restart=on-failure
 RestartSec=5
 
