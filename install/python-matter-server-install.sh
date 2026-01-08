@@ -160,7 +160,7 @@ fetch_and_deploy_gh_release "python-matter-server" "matter-js/python-matter-serv
 
 msg_info "Setting up python-matter-server"
 cd /opt/python-matter-server
-$STD uv pip install -e ".[server]"
+$STD uv pip install --system -e ".[server]"
 msg_ok "Setup python-matter-server"
 
 # =============================================================================
